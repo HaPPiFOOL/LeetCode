@@ -13,7 +13,7 @@ int removeElement(int *nums, int numsSize, int val)
     // [1,6,2,2,5,6,7,8,9]
     //      s       f
     // 快指针向后遍历，指向不等于val的元素时
-    // 将快指针指向的元素复制到慢指针位置后慢指针向前移动
+    // 将快指针指向的元素复制到慢指针位置后，慢指针向前移动
     int slow = 0;
     for (int fast = 0; fast < numsSize; fast++)
     {
