@@ -18,14 +18,12 @@ int searchInsert(int *nums, int numsSize, int target)
             right = mid - 1;
             mid = (left + right) / 2;
         }
-
-        if (nums[mid] < target)
+        else if (nums[mid] < target)
         {
             left = mid + 1;
             mid = (left + right) / 2;
         }
-
-        if (nums[mid] == target)
+        else if (nums[mid] == target)
         {
             return mid;
         }
