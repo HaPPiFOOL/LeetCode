@@ -30,12 +30,12 @@ char *addBinary(char *a, char *b)
 
     // 模拟全加器
     int i = 0;
-    int x = 0, y = 0,cin = 0;
+    int x = 0, y = 0, cin = 0;
     while (i < lenA || i < lenB || cin)
     {
         x = (i < lenA) ? (a[i] - '0') : 0;
         y = (i < lenB) ? (b[i] - '0') : 0;
-        
+
         result[i] = (x ^ y ^ cin) + '0';
         cin = (x & y) | (cin & (x ^ y));
 
