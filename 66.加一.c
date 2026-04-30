@@ -12,6 +12,7 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
 {
     for (int i = digitsSize - 1; i >= 0; i--)
     {
+        // 如果当前数位小于9，直接加1后返回结果
         if (digits[i] < 9)
         {
             digits[i]++;
@@ -26,36 +27,5 @@ int *plusOne(int *digits, int digitsSize, int *returnSize)
     newDigits[0] = 1;
     *returnSize = digitsSize + 1;
     return newDigits;
-    /*
-    int index = digitsSize - 1;
-    while (index > 0 && digits[index] == 9)
-    {
-        digits[index] = 0;
-        index--;
-    }
-    if (index != 0)
-    {
-        digits[index]++;
-    }
-    if (index == 0)
-    {
-        if (digits[index] != 9)
-        {
-            digits[index]++;
-        }
-        else if (digits[index] == 9)
-        {
-            digits[index] = 0;
-            int *newDigits = (int *)malloc((digitsSize + 1) * sizeof(int));
-            memcpy(newDigits + 1, digits, (digitsSize) * sizeof(int));
-            newDigits[0] = 1;
-            digitsSize++;
-            *returnSize = digitsSize;
-            return newDigits;
-        }
-    }
-    *returnSize = digitsSize;
-    return digits;
-    */
 }
 // @lc code=end
