@@ -12,7 +12,7 @@ int mySqrt(int n)
     // f'(x) = 2x
     // x_n+1 = x_n - f(x_n)/f'(x_n)
     // 对于该函数f(x),迭代的初始位置不为0即可
-    if (a == 0)
+    if (n == 0)
         return 0;
 
     double c = n;
