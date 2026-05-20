@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=94 lang=c
+ * @lc app=leetcode.cn id=145 lang=c
  *
- * [94] 二叉树的中序遍历
+ * [145] 二叉树的后序遍历
  */
 
 // @lc code=start
@@ -16,22 +16,24 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-void inorder(struct TreeNode *root, int *retArr, int *index)
+void postorder(struct TreeNode *node, int *retArr, int *index)
 {
-    if (root == NULL)
+    if (NULL == node)
         return;
 
-    inorder(root->left, retArr, index);
-    retArr[(*index)++] = root->val;
-    inorder(root->right, retArr, index);
+    postorder(node->left, retArr, index);
+    postorder(node->right, retArr, index);
+    retArr[(*index)++] = node->val;
+
+    return;
 }
 
-int *inorderTraversal(struct TreeNode *root, int *returnSize)
+int *postorderTraversal(struct TreeNode *root, int *returnSize)
 {
     *returnSize = 0;
     int *retArr = (int *)malloc(sizeof(int) * 101);
 
-    inorder(root, retArr, returnSize);
+    postorder(root, retArr, returnSize);
 
     return retArr;
 }
