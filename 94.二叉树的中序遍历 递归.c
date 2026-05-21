@@ -24,6 +24,8 @@ void inorder(struct TreeNode *root, int *retArr, int *index)
     inorder(root->left, retArr, index);
     retArr[(*index)++] = root->val;
     inorder(root->right, retArr, index);
+
+    return;
 }
 
 int *inorderTraversal(struct TreeNode *root, int *returnSize)
