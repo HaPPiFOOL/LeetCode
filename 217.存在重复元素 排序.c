@@ -5,6 +5,41 @@
  */
 
 // @lc code=start
+/*
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int partition(int arr[], int left, int right)
+{
+    int split = left;
+    int base = arr[right];
+
+    for (int i = left; i < right; i++)
+    {
+        if (arr[i] < base)
+        {
+            swap(&arr[i], &arr[split]);
+            split++;
+        }
+    }
+    swap(&arr[right], &arr[split]);
+    return split;
+}
+
+void quickSort(int arr[], int left, int right)
+{
+    if (left < right)
+    {
+        int split = partition(arr, left, right);
+        quickSort(arr, left, split - 1);
+        quickSort(arr, split + 1, right);
+    }
+}
+*/
 void swap(int *a, int *b)
 {
     int temp = *a;
@@ -48,42 +83,6 @@ void heapSort(int arr[], int n)
         swap(&arr[0], &arr[i]);
     }
 }
-
-/*
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-int partition(int arr[], int left, int right)
-{
-    int split = left;
-    int base = arr[right];
-
-    for (int i = left; i < right; i++)
-    {
-        if (arr[i] < base)
-        {
-            swap(&arr[i], &arr[split]);
-            split++;
-        }
-    }
-    swap(&arr[right], &arr[split]);
-    return split;
-}
-
-void quickSort(int arr[], int left, int right)
-{
-    if (left < right)
-    {
-        int split = partition(arr, left, right);
-        quickSort(arr, left, split - 1);
-        quickSort(arr, split + 1, right);
-    }
-}
-*/
 
 bool containsDuplicate(int *nums, int numsSize)
 {
