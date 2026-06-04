@@ -5,6 +5,11 @@
  */
 
 // @lc code=start
+//
+// n = 2 x 2 x 2 x ... x 2
+// n % 2 一定为 0 
+// (n / 2) % 2 也一定为 0
+//
 bool isPowerOfTwo(int n)
 {
     if (n <= 0)
@@ -17,6 +22,6 @@ bool isPowerOfTwo(int n)
         return true;
     }
 
-    return 0 == (n & (n - 1));
+    return (n % 2 == 0) && isPowerOfTwo(n / 2);
 }
 // @lc code=end
