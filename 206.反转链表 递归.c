@@ -19,7 +19,7 @@ struct ListNode *reverseList(struct ListNode *head)
     if (NULL == head || NULL == head->next)
         return head;
 
-    // 2.你要相信递归函数能够正常工作
+    // 2.你要相信递归函数已经反转了head->next之后的节点，并返回更新后的首节点
     struct ListNode *node = reverseList(head->next);
 
     // 3.根据正常工作的递归函数处理剩下的部分

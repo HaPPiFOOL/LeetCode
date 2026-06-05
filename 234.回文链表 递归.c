@@ -18,7 +18,7 @@ bool recursive(struct ListNode *node, struct ListNode **pre)
     if (NULL == node)
         return true;
 
-    // 相信递归函数的作用
+    // 相信递归函数的作用：node后面的节点是否满足回文性
     if (false == recursive(node->next, pre))
         return false;
 
