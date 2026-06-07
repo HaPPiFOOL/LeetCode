@@ -43,7 +43,7 @@ bool isIsomorphic(char *s, char *t)
             HASH_ADD(hh, T_S, key, sizeof(char), t_s);
         }
 
-        if (s_t->val != t[i] || t_s->val != s[i])
+        if (s_t->key != t_s->val || t_s->key != s_t->val)
             return false;
     }
 

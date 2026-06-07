@@ -13,7 +13,8 @@ int firstBadVersion(int n)
     int left = 1;
     int right = n;
     int mid = left + (right - left) / 2;
-    ;
+
+    // 二分查找
     while (left < right)
     {
         if (true == isBadVersion(mid))
