@@ -7,42 +7,33 @@
 // @lc code=start
 char *toHex(int num)
 {
-    char *hex = malloc(sizeof(char) * 9);
     if (0 == num)
     {
-        hex[0] = '0';
-        hex[1] = '\0';
-        return hex;
+        return "0";
     }
 
+    char *hex = malloc(sizeof(char) * 9);
+    hex[8] = '\0';
+
     unsigned int n = (unsigned int)num;
-
-    int count = 0;
-    bool started = false;
-
     for (int i = 0; i < 8; i++)
     {
-        unsigned int temp = (n >> (4 * (7 - i))) & 0xF;
-
-        if (!started && temp == 0)
-        {
-            continue;
-        }
-
-        started = true;
+        int temp = (n >> (4 * (7 - i))) & 0xF;
 
         if (temp < 10)
         {
-            hex[count++] = temp + '0';
+            hex[i] = temp + '0';
         }
         else
         {
-            hex[count++] = temp - 10 + 'a';
+            hex[i] = temp - 10 + 'a';
         }
     }
 
-    hex[count] = '\0';
+    int i = 0;
+    while ('0' == hex[i])
+        i++;
 
-    return hex;
+    return &hex[i];
 }
 // @lc code=end
