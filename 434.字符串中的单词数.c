@@ -29,6 +29,7 @@ int countSegments(char *s)
         }
     }
 
+    // 处理最后一个单词
     return 1 == inWord ? count + 1 : count;
 }
 // @lc code=end
